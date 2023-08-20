@@ -1,0 +1,27 @@
+<div class="main-wrapper">
+
+    <app-logo [type]="Constants.USER_SPECIFIC_LOGO_TYPE" (backButtonClick)="goToPrevPage()">
+    </app-logo>
+
+    <section class="header-container">
+        <h3>Hi,&nbsp;{{userDetails?.firstName}}.&nbsp;Please select your sport</h3>
+    </section>
+
+    <section class="sport-card-section">
+        <div class="card-grid">
+
+            <ng-container *ngFor="let eachSport of sports">
+                <a class="card" (click)="selectSport(eachSport.sportName)">
+                    <div class="card__background"
+                         style="background-image: url('{{eachSport.sportImgSrc}}')">
+                    </div>
+                    <div class="card__content">
+                        <p class="card__category">SPORT</p>
+                        <h3 class="card__heading">{{eachSport.sportName}}</h3>
+                    </div>
+                </a>
+            </ng-container>
+
+        </div>
+    </section>
+</div>

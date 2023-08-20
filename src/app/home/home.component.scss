@@ -1,0 +1,136 @@
+@import '../../styles/constants.scss';
+
+// @mixin full-width {
+//     width: 100vw;
+// }
+
+// @mixin full-height {
+//     height: 100vh;
+// }
+
+// @mixin half-width {
+//     width: 50%;
+// }
+
+// @mixin half-height {
+//     height: 50%;
+// }
+
+
+
+
+// for desktop
+.background-container {
+
+    .imgbox {
+        display: grid;
+        height: 100%;
+        background-color: #000000;
+
+        .center-fit {
+            height: auto;
+            width: 100%;
+            opacity: 0.5;
+        }
+
+        .header-section {
+            position: absolute;
+            align-self: center;
+            width: 100%;
+            color: $COLOR_WHITE;
+            text-align: center;
+
+            h1 {
+                font-weight: 500;
+                letter-spacing: 15px;
+                word-spacing: 70px;
+                padding: 20px;
+            }
+
+            h4 {
+                font-weight: 300;
+                letter-spacing: 14px;
+                word-spacing: 17px;
+                padding: 10px;
+                background-color: rgba(0,0,0,0.5);
+            }
+
+            .button-container {
+                padding: 20px;
+                text-align: center;
+            
+                .btn {
+                    padding: 20px 65px;
+                    margin: 10px;
+                    border-radius: 30px;
+                    border: none;
+                    font-size: $FONT_SIZE_LARGER;
+                    font-weight: bold;
+                    box-shadow: 10px 10px 94px -24px rgba(255,255,255,1);
+            
+                    &.login {
+                        background-color: $COLOR_WHITE;
+                    }
+                    &.login:hover {
+                        background-color: $COLOR_GRAY;
+                        box-shadow: none;
+                    }
+
+
+                    &.sign-up {
+                        color: $COLOR_WHITE;
+                        background-color: $PRIMARY_COLOR;
+                    }
+                    &.sign-up:hover {
+                        background-color: $PRIMARY_COLOR_LIGHT;
+                        color: $COLOR_BLACK;
+                        box-shadow: none;
+                    }
+                }
+            
+            }
+        }
+    }
+}
+
+
+// for mobiles
+@media (min-width: $MOBILE_MIN_SIZE) and (max-width: $MOBILE_MAX_SIZE) {
+
+    .background-container {
+        overflow: hidden;
+        .imgbox {
+
+            img {
+                width: 160% !important;
+            }
+
+            .header-section {
+                h1 {         
+                    word-spacing: 0;
+                    letter-spacing: 8px;
+                    padding: 10px;
+                }
+
+                h4 {
+                    letter-spacing: 6px;
+                    word-spacing: 0;
+                    padding: 5px;
+                }
+
+                .button-container {
+                    padding: 0px 30px;
+        
+                    .btn {
+                        font-size: $FONT_SIZE_MEDIUM;
+                        padding: 20px 50px;
+                    }
+                }
+            }
+        }        
+    }
+
+}
+
+// for tablets
+@media (min-width: $TABLET_MIN_SIZE_PORTRAIT) and (max-width: $TABLET_MAX_SIZE_PORTRAIT) {}

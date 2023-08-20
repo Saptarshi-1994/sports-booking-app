@@ -1,0 +1,439 @@
+{
+    "statusCode": "200",
+    "responsePayLoad": {
+        "players": [
+            {
+                "userName": "mock1@xyz.com",
+                "password": "mock1@xyz.com",
+                "userId": 1234,
+                "firstName": "Toshinori",
+                "lastName": "Yagi",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock2@xyz.com",
+                "password": "mock2@xyz.com",
+                "userId": 1235,
+                "firstName": "Kakashi",
+                "lastName": "Hatake",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Fielder",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock3@xyz.com",
+                "password": "mock3@xyz.com",
+                "userId": 1236,
+                "firstName": "Monkey D",
+                "lastName": "Luffy",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock4@xyz.com",
+                "password": "mock4@xyz.com",
+                "userId": 1237,
+                "firstName": "Roronoa",
+                "lastName": "Zoro",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock5@xyz.com",
+                "password": "mock5@xyz.com",
+                "userId": 1238,
+                "firstName": "Vinsmoke",
+                "lastName": "Sanji",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock6@xyz.com",
+                "password": "mock6@xyz.com",
+                "userId": 1239,
+                "firstName": "Charlotte",
+                "lastName": "Linlin",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock1@xyz.com",
+                "password": "mock1@xyz.com",
+                "userId": 1234,
+                "firstName": "Toshinori",
+                "lastName": "Yagi",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock2@xyz.com",
+                "password": "mock2@xyz.com",
+                "userId": 1235,
+                "firstName": "Kakashi",
+                "lastName": "Hatake",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Fielder",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock3@xyz.com",
+                "password": "mock3@xyz.com",
+                "userId": 1236,
+                "firstName": "Monkey D",
+                "lastName": "Luffy",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock4@xyz.com",
+                "password": "mock4@xyz.com",
+                "userId": 1237,
+                "firstName": "Roronoa",
+                "lastName": "Zoro",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock5@xyz.com",
+                "password": "mock5@xyz.com",
+                "userId": 1238,
+                "firstName": "Vinsmoke",
+                "lastName": "Sanji",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock6@xyz.com",
+                "password": "mock6@xyz.com",
+                "userId": 1239,
+                "firstName": "Charlotte",
+                "lastName": "Linlin",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock1@xyz.com",
+                "password": "mock1@xyz.com",
+                "userId": 1234,
+                "firstName": "Toshinori",
+                "lastName": "Yagi",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock2@xyz.com",
+                "password": "mock2@xyz.com",
+                "userId": 1235,
+                "firstName": "Kakashi",
+                "lastName": "Hatake",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Fielder",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock3@xyz.com",
+                "password": "mock3@xyz.com",
+                "userId": 1236,
+                "firstName": "Monkey D",
+                "lastName": "Luffy",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock4@xyz.com",
+                "password": "mock4@xyz.com",
+                "userId": 1237,
+                "firstName": "Roronoa",
+                "lastName": "Zoro",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock5@xyz.com",
+                "password": "mock5@xyz.com",
+                "userId": 1238,
+                "firstName": "Vinsmoke",
+                "lastName": "Sanji",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            },
+            {
+                "userName": "mock6@xyz.com",
+                "password": "mock6@xyz.com",
+                "userId": 1239,
+                "firstName": "Charlotte",
+                "lastName": "Linlin",
+                "dateOfBirth": "10/01/1994",
+                "address": "Pandapara, Jalpaiguri",
+                "contactNumber": "7076449800",
+                "sportsDetails": [
+                    {
+                        "sport": "Cricket",
+                        "roles": [
+                            "Batsman",
+                            "Bowler"
+                        ],
+                        "teams": [
+                            "KKR",
+                            "GTR"
+                        ],
+                        "rating": 8
+                    }
+                ]
+            }
+        ]
+    }
+}

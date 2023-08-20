@@ -1,0 +1,141 @@
+@import '../../../../styles/constants.scss';
+
+.logo-container {
+
+    color: $PRIMARY_COLOR;
+    padding: 20px 70px;
+
+    .logo {
+
+        border-bottom: 1px solid #d9d9d9;
+        display: flex;
+        padding-bottom: 10px;
+
+        .logo-item-container {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            &.half-width {
+                width: 50%;
+            }
+
+            &.float-right {
+                float: right;
+            }
+
+            .logo-item {
+                float: left;
+
+                &:hover {
+                    background-color: $PRIMARY_COLOR_LIGHT;
+                    border-radius: 40px;
+                }
+            }
+
+            .logo-item-right {
+                float: right;
+
+                &:hover {
+                    background-color: $PRIMARY_COLOR_LIGHT;
+                    border-radius: 40px;
+                }
+            }
+
+            .nav-link {
+                display: block;
+
+                &.nav-link-right {
+                    padding: 8px;
+                    margin: 2px 25px;
+
+                    img {
+                       margin-right: 8px;
+                    }
+
+                    .btn-right-label {
+                        vertical-align: middle;
+                    }
+                }
+
+                .img-logo {
+                    img {
+                        height: 40px;
+                        width: 40px;
+                        position: relative;
+                        top: 2px;
+                        right: 10px;
+                        left: 30px;
+                    }
+                }
+
+                .logo-name {
+                    font-size: $FONT_SIZE_EXTRA_LARGE;
+                    font-weight: 100;
+                    text-transform: capitalize;
+                    position: relative;
+                    bottom: 8px;
+                    left: 40px;
+                }
+            }
+        }
+    }
+}
+
+
+// for mobiles
+@media (min-width: $MOBILE_MIN_SIZE) and (max-width: $MOBILE_MAX_SIZE) {
+
+    .logo-container {
+        padding: 10px;
+
+        .logo {
+            padding-bottom: 5px;
+
+            .logo-item-container {
+
+                .logo-item,
+                .logo-item-right {
+                    width: 50%;
+
+                    &:hover {
+                        background-color: $PRIMARY_COLOR_LIGHT;
+                    }
+                }
+
+                .nav-link {
+                   
+                    &.nav-link-right {
+                        padding: 8px;
+                        margin: 2px 25px;
+
+                        img {
+                            position: relative;
+                            top: 6px;
+                            right: 6px;
+                        }
+
+                        .btn-right-label {
+                            display: none;
+                        }
+                    }
+
+                    .img-logo {
+                        img {
+                            height: 30px;
+                            width: 30px;
+                        }
+                    }
+
+                    .logo-name {
+                        font-size: $FONT_SIZE_LARGE;
+                        bottom: 5px;
+                        left: 37px;
+                    }
+                }
+            }
+        }
+
+
+    }
+}

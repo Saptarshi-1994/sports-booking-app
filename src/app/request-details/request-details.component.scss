@@ -1,0 +1,131 @@
+@import '../../styles/constants.scss';
+
+.main-wrapper {
+
+    height: 100vh;
+    background: url('../../assets/images/cricket/cricket-landscape-img-3.jpg');
+    background-size: cover;
+
+    .request-details-container {
+        display: flex;
+
+        .card-container {
+            width: 50%;
+            padding: 50px 100px;
+            height: 80vh;
+
+            .player-card,
+            .form-card {
+                border-radius: 20%;
+                padding: 50px;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.45);
+                color: $COLOR_WHITE;
+
+                .img-container {
+                    text-align: center;
+                    padding: 20px 0px;
+
+                    img {
+                        width: 160px;
+                    }
+                }
+
+                .player-card-details {
+                    text-align: center;
+
+                    h3 {
+                        text-transform: uppercase;
+                        padding: 25px 0px;
+                        letter-spacing: 3px;
+                        font-weight: bold;
+                    }
+
+                    h4,
+                    h5 {
+                        padding: 10px 0px;
+                    }
+                }
+
+
+                .form-details-row {
+                    text-align: center;
+
+                    .form-input {
+                        padding: 25px 0px;
+
+                        label {
+                            display: block;
+                            padding-bottom: 10px;
+                            font-size: $FONT_SIZE_EXTRA_EXTRA_LARGE;
+                            text-transform: uppercase;
+                            letter-spacing: 5px;
+                        }
+
+                        input {
+                            padding: 10px 30px;
+                            width: 80%;
+                            border-radius: 30px;
+                            border: none;
+                        }
+                    }
+                }
+
+                .button-container {
+                    text-align: center;
+                    margin: 20px 0px;
+
+                    button {
+                        padding: 10px 40px;
+                        background-color: white;
+                        border-radius: 40px;
+                        font-size: x-large;
+                        font-weight: bold;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// for mobiles
+@media (min-width: $MOBILE_MIN_SIZE) and (max-width: $MOBILE_MAX_SIZE) {
+
+    .main-wrapper {
+        overflow: auto;
+        background: url('../../assets/images/cricket/cricket-img-5.jpg');
+        background-size: cover;
+
+        .request-details-container {
+            display: block;
+
+            .card-container {
+                padding: 20px;
+                height: 70vh;
+                width: 100%;
+
+                .player-card,
+                .form-card {
+                    border: none;
+                    border-radius: 60px;
+                    padding: 40px;
+
+                    .img-container {
+                        img {
+                            width: 120px;
+                        }
+                    }
+
+                    .form-details-row {
+                        .form-input {
+                            label {
+                                font-size: $FONT_SIZE_EXTRA_LARGE;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

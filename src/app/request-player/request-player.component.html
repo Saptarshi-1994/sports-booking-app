@@ -1,0 +1,68 @@
+<section class="main-wrapper">
+
+    <app-logo [type]="Constants.USER_SPECIFIC_LOGO_TYPE" (backButtonClick)="goToPrevPage()">
+    </app-logo>
+
+    <!-- header with filter -->
+    <section class="header-container">
+
+        <h3>Request a Player for a {{selectedSport}} match</h3>
+
+        <div class="search-container">
+            <input type="text" id="myInput" placeholder="Search for names.." title="Type in a name"
+                [(ngModel)]="filterInput" (ngModelChange)="filterList()">
+        </div>
+
+    </section>
+
+    <!-- details section -->
+    <section class="table-container">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="table-col-1">NAME</th>
+                        <th class="table-col-2">ROLE</th>
+                        <th class="table-col-3">RATING</th>
+                        <th class="table-col-4">STATS</th>
+                        <th class="table-col-5">ACTIONS</th>
+                    </tr>
+                </thead>
+
+                <tbody *ngIf="!visiblePlayerList || visiblePlayerList.length == 0">
+                    <tr>
+                        <td class="table-col-0" colspan="5">No results found! Try again with a different name.</td>
+                    </tr>
+                </tbody>
+
+                <tbody *ngIf="visiblePlayerList && visiblePlayerList.length > 0">
+                    <tr *ngFor="let eachPlayer of visiblePlayerList; let playerIndex = index;">
+                        <td class="table-col-1">{{eachPlayer.firstName}}&nbsp;{{eachPlayer.lastName}}</td>
+                        <td class="table-col-2">{{showSportRoles(eachPlayer.sportsDetails)}}</td>
+                        <td class="table-col-3">
+                            <app-rating [rating]="showSportRatings(eachPlayer.sportsDetails)"></app-rating>
+                        </td>
+                        <td class="table-col-4">TBD</td>
+                        <td class="table-col-5 action-item">
+
+                            <span class="request-more" (click)="openRequestMenu(playerIndex)" (clickOutside)="closeRequestMenu(playerIndex)">
+                                <img src="../../assets/icons/more-option-icon.png">
+                            </span>
+
+                            <ul class="actions-menu-list" *ngIf="openMenu[playerIndex] == true">
+                                <li (click)="requestPlayer(playerIndex)">REQUEST</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+
+
+            </table>
+        </div>
+    </section>
+
+    <!-- pagination -->
+    <app-pagination [totalCount]="players.length" [eachBlock]="10" (pageChanged)="updatePageIndices($event)">
+    </app-pagination>
+
+</section>

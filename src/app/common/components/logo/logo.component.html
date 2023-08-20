@@ -1,0 +1,44 @@
+<!-- left corner header with logo and website name -->
+<nav class="logo-container">
+    <div class="logo">
+
+        <!-- LEFT SIDE BUTTONS -->
+        <ul class="logo-item-container half-width" >
+
+            <li class="logo-item">
+                <button class="nav-link nav-link-right" (click)="updateProfile()">
+                    <span><img src="../../../../assets/icons/user-profile-icon.png"></span>
+                    <span class="btn-right-label">PROFILE</span>
+                </button>
+            </li>
+
+            <li class="logo-item">
+                <button class="nav-link nav-link-right" (click)="goToHome()">
+                    <span><img src="../../../../assets/icons/home-icon-silhouette.png"></span>
+                    <span class="btn-right-label">HOME</span>
+                </button>
+            </li>
+
+        </ul>
+
+        <!-- RIGHT SIDE BUTTONS -->
+        <ul class="logo-item-container half-width float-right">
+
+            <li class="logo-item-right">
+                <button class="nav-link nav-link-right" (click)="logout()">
+                    <span><img src="../../../../assets/icons/logout-icon.png"></span>
+                    <span class="btn-right-label">LOGOUT</span>
+                </button>
+            </li>
+            
+            <li class="logo-item-right">
+                <button class="nav-link nav-link-right" (click)="back()">
+                    <span><img src="../../../../assets/icons/previous-icon.png"></span>
+                    <span class="btn-right-label">BACK</span>
+                </button>
+            </li>
+
+        </ul>
+
+    </div>
+</nav>

@@ -1,0 +1,125 @@
+@import '../../../styles/constants.scss';
+
+// for desktop
+.form-login-container {
+    padding: 150px;
+    text-align: center;
+
+    .form-login-card {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 50px;
+    }
+
+    .form-login-header {
+        padding: 20px;
+
+        h1 {
+           
+            letter-spacing: 20px;
+        }
+    }
+
+
+    .form-input {
+        padding: 10px;
+
+        label {
+            color: $PRIMARY_COLOR_LIGHT;
+            padding: 10px 20px;
+            font-size: xx-large;
+        }
+
+        .label-invalid {
+            color: red;
+        }
+
+        input {
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .input-invalid {
+            border: 2px solid red;
+        }
+    }
+
+    .button-container {
+        padding: 30px;
+        text-align: center;
+
+        .btn {
+            padding: 20px 65px;
+            margin: 10px;
+            border-radius: 30px;
+            border: none;
+            font-size: larger;
+            font-weight: bold;
+            box-shadow: 10px 10px 94px -24px rgba(255,255,255,1);
+
+            &.login {
+                background-color: $COLOR_WHITE;
+            }
+            &.login:hover {
+                background-color: $COLOR_GRAY;
+                box-shadow: none;
+            }
+
+
+            &.sign-up {
+                color: $COLOR_WHITE;
+                background-color: $PRIMARY_COLOR;
+            }
+            &.sign-up:hover {
+                background-color: $PRIMARY_COLOR_LIGHT;
+                color: #000000;
+                box-shadow: none;
+            }
+        }
+
+    }
+}
+
+// for mobiles
+@media (min-width: $MOBILE_MIN_SIZE) and (max-width: $MOBILE_MAX_SIZE) {
+
+    .form-login-container {
+        height: 50%;
+        padding: 15px;
+        line-height: 15px;
+
+        .form-login-header {
+            padding: 25px;
+
+            h1 {
+                
+                padding: 25px;
+                letter-spacing: 8px;
+            }
+        }
+
+        .form-details {
+            .form-input {
+
+                label {
+                    padding: 0;
+                    font-size: $FONT_SIZE_EXTRA_LARGE;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .button-container {
+            display: flex;
+
+            .btn {
+                font-size: $FONT_SIZE_MEDIUM;
+                padding: 20px 50px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+// for tablets
+@media (min-width: $TABLET_MIN_SIZE_PORTRAIT) and (max-width: $TABLET_MAX_SIZE_PORTRAIT) {}

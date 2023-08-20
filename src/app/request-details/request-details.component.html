@@ -1,0 +1,54 @@
+<section class="main-wrapper">
+
+    <app-logo [type]="Constants.USER_SPECIFIC_LOGO_TYPE" (backButtonClick)="goToPrevPage()">
+    </app-logo>
+
+    <section class="request-details-container">
+
+        <section class="card-container">
+            <div class="player-card">
+                <div class="img-container">
+                    <img src="../../assets/images/cricket/cricket-img-4.jpg">
+                </div>
+
+                <div class="player-card-details">
+                    <h3>{{selectedPlayer.firstName}}&nbsp;{{selectedPlayer.lastName}}</h3>
+                    <h4><strong>PLAYS AT:</strong>&nbsp;&nbsp;{{showRoles()}}</h4>
+                    <h5><strong>LIVES AT:</strong>&nbsp;&nbsp;{{selectedPlayer.address}}</h5>
+                    <h5><strong>CONTACT:</strong>&nbsp;&nbsp;{{selectedPlayer.contactNumber}}</h5>
+                </div>
+            </div>
+        </section>
+
+        <section class="card-container">
+            <div class="form-card">
+                <h3>REQUEST FOR A {{selectedSport.toUpperCase()}} MATCH</h3>
+
+                <form>
+                    <div class="form-details-row">
+                        <div class="form-input">
+                            <label for="venue">Venue</label>
+                            <input type="text" id="venue" name="venue" placeholder="Venue">
+                        </div>
+
+                        <div class="form-input">
+                            <label for="time">Time</label>
+                            <input type="text" id="time" name="time" placeholder="time">
+                        </div>
+
+                        <div class="form-input">
+                            <label for="other">Other details</label>
+                            <input type="text" id="other" name="other" placeholder="other">
+                        </div>
+
+                    </div>
+                </form>
+
+                <div class="button-container">
+                    <button class="btn-request">SEND REQUEST</button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+</section>

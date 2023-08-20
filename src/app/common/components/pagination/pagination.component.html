@@ -1,0 +1,16 @@
+<section class="pagination-container" *ngIf="pagesArr && pagesArr.length > 0">
+    <div class="pagination">
+
+        <!-- previous link -->
+        <a [attr.href]="disablePrev ? null : '#'" [ngClass]="{ 'disabled' : disablePrev }"
+            (click)="!disablePrev && selectPrevPage()">&laquo;</a>
+
+        <a *ngFor="let eachPage of pagesArr" (click)="selectPage(eachPage)"
+            [ngClass]="{ 'active': selectedPage == eachPage }">{{eachPage}}</a>
+
+        <!-- next link -->
+        <a [attr.href]="disableNext ? null : '#'" [ngClass]="{ 'disabled' : disableNext}"
+            (click)="!disableNext && selectNextPage()">&raquo;</a>
+
+    </div>
+</section>

@@ -1,0 +1,38 @@
+{
+    "statusCode": "200",
+    "responsePayLoad": {
+        "userName": "123",
+        "userId": 1234,
+        "firstName": "Saptarshi",
+        "lastName": "Bhattacharya",
+        "dateOfBirth": "10/01/1994",
+        "address": "Pandapara, Jalpaiguri",
+        "contactNumber": "7076449800",
+        "sportsDetails": [
+            {
+                "sport": "CRICKET",
+                "roles": [
+                    "BATSMAN",
+                    "BOWLER"
+                ],
+                "teams": [
+                    "KKR",
+                    "GTR"
+                ],
+                "rating": 8
+            },
+            {
+                "sport": "FOOTBALL",
+                "roles": [
+                    "DEFENDER",
+                    "GOAL_KEEPER"
+                ],
+                "teams": [
+                    "Manchester",
+                    "Liverpool"
+                ],
+                "rating": 8.5
+            }
+        ]
+    }
+}

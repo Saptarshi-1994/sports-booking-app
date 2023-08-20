@@ -1,0 +1,163 @@
+<div class="form-login-container">
+    <div class="form-login-card">
+
+        <div class="form-login-header">
+            <h1>SIGN UP</h1>
+        </div>
+
+        <div class="form-details" *ngIf="requestObj && requestObj.newUserDetails">
+            <form #signUpForm="ngForm"
+                  class="form"
+                  name="signUpForm"
+                  id="signUpForm"
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  novalidate>
+
+                <!-- First and Last Name -->
+                <div class="form-details-row">
+                    <div class="form-input">
+                        <label id="label_firstName" for="firstName">First Name:</label>
+                        <input type="text" 
+                               id="firstName" 
+                               name="firstName" 
+                               placeholder="Your First Name" 
+                               [(ngModel)]="requestObj.newUserDetails.firstName"
+                               [ngStyle]="{ 'width': checkWidth('firstName')}">
+                    </div>
+
+                    <div class="form-input">
+                        <label id="label_lastName" for="lastName">Last Name:</label>
+                        <input type="text" 
+                               id="lastName" 
+                               name="lastName" 
+                               placeholder="Your Last Name"
+                               [(ngModel)]="requestObj.newUserDetails.lastName"
+                               [ngStyle]="{ 'width': checkWidth('lastName')}">
+                    </div>
+                </div>
+
+                <!-- DoB and Address -->
+                <div class="form-details-row">
+                    <div class="form-input">
+                        <label id="label_dateOfBirth" for="dateOfBirth">Date of Birth:</label>
+                        <input type="text" 
+                               id="dateOfBirth" 
+                               name="dateOfBirth" 
+                               placeholder="Your Date of Birth"
+                               [(ngModel)]="requestObj.newUserDetails.dateOfBirth"
+                               [ngStyle]="{ 'width': checkWidth('dateOfBirth')}">
+                    </div>
+
+                    <div class="form-input">
+                        <label id="label_address" for="address">Address:</label>
+                        <input type="text" 
+                               id="address"
+                               name="address" 
+                               placeholder="The Town/city/vilage you live in"
+                               [(ngModel)]="requestObj.newUserDetails.address"
+                               [ngStyle]="{ 'width': checkWidth('address')}">
+                    </div>
+                </div>
+
+                <!-- Contact and Sport -->
+                <div class="form-details-row">
+                    <div class="form-input">
+                        <label id="label_contactNumber" for="contactNumber">Contact:</label>
+                        <input type="text" 
+                               id="contactNumber" 
+                               name="contactNumber" 
+                               placeholder="Your Contact Number"
+                               [(ngModel)]="requestObj.newUserDetails.contactNumber"
+                               [ngStyle]="{ 'width': checkWidth('contactNumber')}">
+                    </div>
+
+                    <div class="form-input">
+                        <label id="label_sportName" for="sportName">Sport:</label>
+                        <select id="sportName" 
+                                name="sportName"     
+                                [(ngModel)]="requestObj.newUserDetails.sportsDetails[0].sport"
+                                [ngStyle]="{ 'width': checkWidth('sportName')}"
+                                (change)="changeSport()">
+
+                            <option class="option-value-default" value="" selected disabled>Select the Sport you play</option>
+                            <option class="option-value" *ngFor="let eachValue of sportsMap.sportsList" value="{{eachValue.id}}">{{eachValue.value}}</option>
+                            
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Role and Team Name -->
+                <div class="form-details-row">
+                    <div class="form-input" (clickOutside)="showDropDown = false">
+                       <label id="label_role" for="role">Role:</label>
+                        <button class="drop-toggle btn flat"
+                                [ngStyle]="{ 'width': checkWidth('role')}" 
+                                (click)="showDropDown = !showDropDown"
+                                >
+                            <span class="placeholder-text" *ngIf="(!roles || roles.length == 0 ) || (roles.length > 0 && selectedRoles?.length == 0)">Select the roles you play in</span>
+                            <span *ngIf="selectedRoles && selectedRoles.length > 0">{{selectedRoles.join(', ')}}</span>
+                            <i class="fa fa-angle-down"></i>                            
+                        </button>
+
+                        <div class="drop-show"
+                                 [ngStyle]="{ 'width': checkWidth('role')}" 
+                                 *ngIf="showDropDown && roles && roles.length > 0">
+                            <label *ngFor="let eachRole of roles">
+                                <input type="checkbox" 
+                                        name="role_checkbox_{{eachRole.id}}" 
+                                        [(ngModel)]="eachRole.checked" 
+                                        (change)="getSelectedValue(eachRole.checked, eachRole.id)" />
+                                <span>{{eachRole.value}}</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-input">
+                        <label id="label_teamName" for="teamName">Team Name:</label>
+                        <input type="text" 
+                               id="teamName" 
+                               name="teamName" 
+                               placeholder="The Teams you play in, seperated by comma"
+                               [(ngModel)]="requestObj.newUserDetails.sportsDetails[0].teams[0]"
+                               [ngStyle]="{ 'width': checkWidth('teamName')}">
+                    </div>
+                </div>
+
+                <!-- User name and Password -->
+                <div class="form-details-row">
+                    <div class="form-input">  
+                        <label id="label_userName" for="userName">User Name:</label>
+                        <input type="text" 
+                               id="userName" 
+                               name="userName" 
+                               placeholder="Your User Name"
+                               [(ngModel)]="requestObj.newUserDetails.userName"
+                               [ngStyle]="{ 'width': checkWidth('userName')}">
+                    </div>
+
+                    <div class="form-input">
+                        <label id="label_password" for="password">Password:</label>
+                        <input type="password" 
+                               id="password" 
+                               name="password"
+                               placeholder="Your Password"
+                               [(ngModel)]="requestObj.newUserDetails.password"
+                               [ngStyle]="{ 'width': checkWidth('password')}">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="button-container">
+            <!-- sign up -->
+            <button class="btn login" (click)="signUp()">SIGN UP</button>
+            <!-- back -->
+            <button class="btn sign-up" (click)="backToHome()">BACK</button>
+        </div>
+
+    </div>
+</div>

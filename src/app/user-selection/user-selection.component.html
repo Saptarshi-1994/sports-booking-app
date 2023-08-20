@@ -1,0 +1,28 @@
+<div class="main-wrapper">
+
+    <app-logo [type]="Constants.USER_SPECIFIC_LOGO_TYPE"
+              (backButtonClick)="goToPrevPage()">
+    </app-logo>
+
+    <section class="header-container">
+        <h3>Now,&nbsp;please select what you want to do in {{selectedSport}}</h3>
+    </section>
+
+    <section class="sport-card-section">
+        <div class="card-grid">
+
+            <ng-container *ngFor="let eachAction of actions">
+                <a class="card" (click)="selectAction(eachAction.actionName)">
+                    <div class="card__background"
+                         style="background-image: url('{{eachAction.imgSrc}}')">
+                    </div>
+                    <div class="card__content">
+                        <p class="card__category">ACTION</p>
+                        <h3 class="card__heading">{{eachAction.actionName.toUpperCase()}}</h3>
+                    </div>
+                </a>
+            </ng-container>
+
+        </div>
+    </section>
+</div>

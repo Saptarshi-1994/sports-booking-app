@@ -1,0 +1,36 @@
+<section class="background-container">
+    <div class="imgbox">
+
+        <!-- main image -->
+        <img class="center-fit" [src]='imageSource'>
+
+        <section class="header-section">
+
+            <!-- normal landing -->
+            <ng-container *ngIf="!requestObj">
+
+                <h1>SPORTIFY</h1>
+
+                <h4>CHOOSE YOUR GAME, PICK YOUR PLAYERS</h4>
+
+                <div class="button-container">
+                    <button class="btn login" (click)="login()">LOGIN</button>
+                    <button class="btn sign-up" (click)="signup()">SIGNUP</button>
+                </div>
+
+            </ng-container>
+
+            <!-- login area -->
+            <ng-container *ngIf="requestObj && requestObj.existingUserDetails">
+                <app-login [requestObj]="requestObj" (requestObjEmitter)="updateRequestObj($event)"></app-login>
+            </ng-container>
+
+            <!-- signup area -->
+            <ng-container *ngIf="requestObj && requestObj.newUserDetails">
+                <app-signup [requestObj]="requestObj" (requestObjEmitter)="updateRequestObj($event)"></app-signup>
+            </ng-container>
+
+        </section>
+
+    </div>
+</section>

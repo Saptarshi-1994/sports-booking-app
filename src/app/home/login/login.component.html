@@ -1,0 +1,56 @@
+<div class="form-login-container">
+    <div class="form-login-card">
+
+        <div class="form-login-header">
+            <h1>LOGIN</h1>
+        </div>
+
+        <div class="form-details" *ngIf="requestObj.existingUserDetails">
+            <form #loginForm="ngForm"
+                    class="form"
+                    name="loginForm"
+                    id="loginForm"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                    novalidate>
+
+                <div class="form-input">
+                    <label for="userName" 
+                           [ngClass]="{ 'label-invalid': checkFormErrors(loginForm,'userName') }">Username:</label>
+                    <input type="text" 
+                           id="userName" 
+                           name="userName" 
+                           [(ngModel)]="requestObj.existingUserDetails.userName" 
+                           [ngClass]="{ 'input-invalid': checkFormErrors(loginForm, 'userName') }"
+                           required>
+                        <br>
+                        <br>
+                </div>
+
+                <div class="form-input">
+                    <label for="password"
+                           [ngClass]="{ 'label-invalid': checkFormErrors(loginForm, 'password') }">Password:</label>
+                    <input type="password" 
+                           id="password" 
+                           name="password" 
+                           [(ngModel)]="requestObj.existingUserDetails.password" 
+                           [ngClass]="{ 'input-invalid': checkFormErrors(loginForm, 'password') }"
+                           required>
+                           <br>
+                           <br>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="button-container">
+            <!-- login -->
+            <button class="btn login" (click)="login()">LOGIN</button>
+            <!-- sign up -->
+            <button class="btn sign-up" (click)="backToHome()">BACK</button>
+        </div>
+
+    </div>
+</div>

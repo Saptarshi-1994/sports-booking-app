@@ -1,0 +1,293 @@
+@import '../../styles/constants.scss';
+
+/* desktop view */
+.main-wrapper {
+    height: 100vh;
+    text-align: center;
+
+
+    .header-container {
+        text-align: center;
+        padding: 14px 10px;
+
+        h3 {
+            color: $PRIMARY_COLOR;
+        }
+    }
+
+    .form-details {
+        text-align: left;
+        padding: 0px 100px;
+
+        table {
+            width: 100%;
+
+            .table-header {
+                width: 100%;
+                padding: 20px 5px;
+                color: $PRIMARY_COLOR;
+            }
+
+            .form-input,
+            .form-input-sport {
+                width: inherit;
+                padding: 10px;
+
+                label {
+                    padding: 5px 20px;
+                    font-size: $FONT_SIZE_LARGE;
+                    font-weight: 400;
+                    color: $PRIMARY_COLOR;
+                    position: relative;
+                    top: 2px;
+                }
+
+                input,
+                select,
+                button {
+                    padding: 10px;
+                    border-radius: 10px;
+                    border: 2px solid $PRIMARY_COLOR;
+                    width: calc(100% - 200px);
+
+                    &:disabled {
+                        color: $PRIMARY_COLOR !important;
+                        font-weight: 400;
+                        background-color: $PRIMARY_COLOR_LIGHT;
+                        cursor: not-allowed;
+                    }
+
+                    &:after {
+                        margin-right: 10px
+                    }
+
+                    &:default {
+                        color: $COLOR_GRAY;
+                    }
+                }
+
+                .drop-toggle {
+                    background-color: #fff;
+                    padding: 10px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    text-align: left;
+
+                    .placeholder-text {
+                        color: $COLOR_GRAY;
+                    }
+
+                    i {
+                        float: right;
+                    }
+
+                }
+
+                .drop-show {
+                    padding: 10px;
+                    background-color: #FFF;
+                    border: 3px solid $PRIMARY_COLOR_LIGHT;
+                    border-radius: 10px;
+                    position: absolute;
+                    z-index: 100;
+                    -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, .15);
+                    -moz-box-shadow: 0 6px 10px rgba(0, 0, 0, .15);
+                    box-shadow: 0 6px 10px rgba(0, 0, 0, .15);
+                    margin-left: 4.2%;
+                    color: black;
+                    width: calc(40% - 170px);
+
+                    label {
+
+                        display: block;
+                        font-size: 15px;
+                        cursor: pointer;
+
+                        input {
+                            width: 10%;
+                        }
+
+                        input:checked {
+                            background-color: $PRIMARY_COLOR_LIGHT;
+                        }
+
+                        span {
+                            display: inline-block;
+                            padding-left: 10px;
+
+                        }
+                    }
+                }
+
+                &-btn {
+                    text-align: center;
+
+                    &.add-new-sport-btn-container {
+                        margin-top: 40px;
+                    }
+
+                    .btn-add-new-sport,
+                    .btn-remove-new-sport {
+                        background-color: inherit;
+                        border: none;
+                        font-weight: 700;
+                        color: inherit;
+
+
+                        margin-left: 15px;
+
+                        .btn-icon {
+                            margin-right: 4px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .button-container {
+        padding: 30px;
+        text-align: center;
+
+        .btn {
+            padding: 20px 65px;
+            margin: 10px;
+            border-radius: 30px;
+            border: none;
+            font-size: larger;
+            font-weight: bold;
+
+            &.update {
+                background-color: $PRIMARY_COLOR_LIGHT;
+                color: $PRIMARY_COLOR;
+            }
+        }
+    }
+}
+
+// for mobiles
+@media (min-width: $MOBILE_MIN_SIZE) and (max-width: $MOBILE_MAX_SIZE) {
+
+    .main-wrapper {
+        padding: 0;
+        height: 100vh;
+        text-align: center;
+
+        .header-container {
+            text-align: center;
+            padding: 10px;
+
+            h3 {
+                color: $PRIMARY_COLOR;
+            }
+        }
+
+        .form-details {
+            padding: 0px 25px !important;
+            text-align: left !important;
+
+            table {
+
+                thead {
+                    text-align: center;
+                }
+
+                .table-header {
+                    padding: 0;
+                }
+
+                .form-input,
+                .form-input-sport {
+                    width: 100%;
+                    display: block;
+                    text-align: left;
+                    padding: 10px;
+
+                    label {
+                        display: block;
+                        padding-bottom: 10px;
+                    }
+
+                    input, select, button {
+                        margin-bottom: 15px;
+                        display: block;
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid $PRIMARY_COLOR;
+                        border-radius: 10px;
+
+                        &:disabled {
+                            background-color: $PRIMARY_COLOR_LIGHT;
+                            color: $COLOR_BLACK;
+                            font-weight: 600;
+                        }
+                    }
+
+                    &-btn {
+                        .btn-remove-new-sport {
+                            top: 0;
+
+                            .btn-icon {
+                                position: static;
+                            }
+
+                            .btn-label {
+                                position: static;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+
+                .form-input-sport-btn {
+                    padding: 15px 0px;
+                    margin-top: 22px;
+                    margin-left: 10px;
+
+                    &.add-new-sport-btn-container {
+                        margin-top: 0px;
+                    }
+
+                    .btn-add-new-sport,
+                    .btn-remove-new-sport {
+                        background-color: inherit;
+                        border: none;
+                        color: $PRIMARY_COLOR;
+                        font-weight: 500;
+                        position: static;
+                        margin-left: 0;
+
+                        .btn-icon {
+                            position: static;
+                            margin-right: 8px;
+                        }
+
+                        .btn-label {
+                            position: static;
+                        }
+                    }
+                }
+
+
+            }
+
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+
+            .btn {
+                font-size: $FONT_SIZE_MEDIUM !important;
+                padding: 20px 40px !important;
+                margin-right: 0px !important;
+            }
+        }
+    }
+}
+
+// for tablets
+@media (min-width: $TABLET_MIN_SIZE_PORTRAIT) and (max-width: $TABLET_MAX_SIZE_PORTRAIT) {}

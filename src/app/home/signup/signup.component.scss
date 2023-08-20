@@ -1,0 +1,227 @@
+@import '../../../styles/constants.scss';
+
+.form-login-container {
+    padding: 150px;
+    text-align: center;
+    color: $COLOR_WHITE;
+
+    .form-login-card {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 50px;
+
+        .form-login-header {
+            padding: 40px;
+
+            h1 {
+
+                letter-spacing: 10px;
+                word-spacing: 25px;
+            }
+        }
+
+        .form-details {
+            .form-details-row {
+                padding: 15px;
+                text-align: left;
+                display: flex;
+
+                .form-input {
+                    width: 50%;
+                    display: inline;
+                    color: $PRIMARY_COLOR_LIGHT;
+
+                    label {
+                        padding: 10px 20px;
+                        font-size: xx-large;
+                    }
+
+                    input {
+                        border: 3px solid $PRIMARY_COLOR_LIGHT;
+                        padding: 10px;
+                        border-radius: 10px;
+                    }
+
+                    select {
+                        border: 3px solid $PRIMARY_COLOR_LIGHT;
+                        padding: 10px;
+                        border-radius: 10px;
+
+                        &:after {
+                            margin-right: 10px
+                        }
+
+                        &:default {
+                            color: $COLOR_GRAY;
+                        }
+                    }
+
+                    .drop-toggle {
+                        background-color: #fff;
+                        border: 3px solid $PRIMARY_COLOR_LIGHT;
+                        padding: 10px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        text-align: left;
+
+                        .placeholder-text {
+                            color: $COLOR_GRAY;
+                        }
+
+                        i {
+                            float: right;
+                        }
+    
+                    }
+
+                    .drop-show {
+                        padding: 10px;
+                        background-color: #FFF;
+                        border: 3px solid $PRIMARY_COLOR_LIGHT;
+                        border-radius: 10px;
+                        position: absolute;
+                        z-index: 100;
+                        -webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, .15);
+                        -moz-box-shadow: 0 6px 10px rgba(0, 0, 0, .15);
+                        box-shadow: 0 6px 10px rgba(0, 0, 0, .15);
+                        margin-left: 6%;
+                        color: black;
+
+                        label {
+
+                            display: block;
+                            font-size: 15px;
+                            cursor: pointer;
+
+                            input:checked {
+                                background-color: $PRIMARY_COLOR_LIGHT;
+                            }
+
+                            span {
+                                display: inline-block;
+                                padding-left: 10px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .button-container {
+        padding: 30px;
+        text-align: center;
+
+        .btn {
+            padding: 20px 65px;
+            margin: 10px;
+            border-radius: 30px;
+            border: none;
+            font-size: larger;
+            font-weight: bold;
+            box-shadow: 10px 10px 94px -24px rgba(255, 255, 255, 1);
+
+            &.login {
+                background-color: $COLOR_WHITE;
+                color: $COLOR_BLACK;
+            }
+
+            &.login:hover {
+                background-color: $COLOR_GRAY;
+                box-shadow: none;
+                color: $COLOR_WHITE;
+            }
+
+
+            &.sign-up {
+                color: $COLOR_WHITE;
+                background-color: $PRIMARY_COLOR;
+            }
+
+            &.sign-up:hover {
+                background-color: $PRIMARY_COLOR_LIGHT;
+                color: #000000;
+                box-shadow: none;
+            }
+        }
+
+    }
+}
+
+
+// for mobiles
+@media (min-width: $MOBILE_MIN_SIZE) and (max-width: $MOBILE_MAX_SIZE) {
+
+    .form-login-container {
+        height: 100%;
+        padding: 15px;
+
+        .form-details {
+            padding: 0 !important;
+            text-align: left !important;
+        }
+
+        .form-login-header {
+            padding: 25px !important;
+
+            h1 {
+
+                letter-spacing: 8px !important;
+                word-spacing: 4px !important;
+                padding: 10px;
+            }
+        }
+
+        .form-details-row {
+            padding: 15px 15px 0px 15px !important;
+            display: block !important;
+
+            .form-input {
+                width: 100%;
+                display: block;
+                text-align: center;
+
+                label {
+                    display: none;
+                }
+
+                input, select, button {
+                    margin-bottom: 15px;
+                    width: 100% !important;
+                }
+
+                .drop-show {
+                    width: 85% !important;
+                    margin-top: -15px;
+                    margin-left: 0 !important;
+
+                    label {
+                        text-align: left;
+
+                        input {
+                            margin-bottom: 0;
+                            width: 10% !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+
+            .btn {
+                font-size: $FONT_SIZE_MEDIUM !important;
+                padding: 20px 40px !important;
+                margin-right: 0px !important;
+            }
+        }
+    }
+
+}
+
+// for tablets
+@media (min-width: $TABLET_MIN_SIZE_PORTRAIT) and (max-width: $TABLET_MAX_SIZE_PORTRAIT) {}

@@ -1,0 +1,92 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$sports-booking-app-primary: mat.define-palette(mat.$indigo-palette);
+$sports-booking-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$sports-booking-app-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$sports-booking-app-theme: mat.define-light-theme((
+  color: (
+    primary: $sports-booking-app-primary,
+    accent: $sports-booking-app-accent,
+    warn: $sports-booking-app-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($sports-booking-app-theme);
+
+
+
+
+/* You can add global styles to this file, and also import other style files */
+@import './styles/constants.scss';
+@import 'bootstrap/scss/bootstrap';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    html {
+      height: 100%;
+    }
+
+    /* body CSS */
+    body {
+        overflow: auto;
+        margin: 0;
+        padding: 0;
+        color: $PRIMARY_COLOR;
+        font-family: Helvetica, Sans-Serif;
+        height: 100%;
+    }
+
+    /* all button CSS */
+    button,
+    a {
+        cursor: pointer
+    }
+
+    /* headers css */
+    h1 {
+      font-size: 5vw;
+    }
+
+    h2 {
+      font-size: 3.5vw;
+    }
+
+    h3 {
+      font-size: 2.5vw;
+    }
+
+    h4 {
+      font-size: 2vw;
+    }
+
+    h5 {
+      font-size: 1.5vw;
+    }
+
+    h6 {
+      font-size: 1vw;
+    }
+}

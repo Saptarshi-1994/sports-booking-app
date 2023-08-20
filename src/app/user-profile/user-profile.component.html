@@ -1,0 +1,223 @@
+<div class="main-wrapper">
+
+    <app-logo [type]="Constants.USER_SPECIFIC_LOGO_TYPE" (backButtonClick)="goToPrevPage()">
+    </app-logo>
+
+    <!-- header -->
+    <section class="header-container" *ngIf="userDetails">
+        <h3>UPDATE YOUR PROFILE</h3>
+    </section>
+
+    <!-- form -->
+    <section class="form-details" *ngIf="userDetails">
+        <form #updateProfileForm="ngForm"
+              class="form"
+              name="updateProfileForm"
+              id="updateProfileForm"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              novalidate>
+
+            <table>
+                <!-- personal info -->
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="table-header">Personal Information</div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <!-- First Name -->
+                    <tr>
+                        <td colspan="4">
+                            <div class="form-input">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Your First Name"
+                                    [(ngModel)]="userDetails.firstName" disabled>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Last Name -->
+                    <tr>
+                        <td colspan="4">
+                            <div class="form-input">
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Your Last Name"
+                                    [(ngModel)]="userDetails.lastName" disabled>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- DoB -->
+                    <tr>
+                        <td colspan="4">
+                            <div class="form-input">
+                                <label for="dateOfBirth">Date of Birth:</label>
+                                <input type="text" id="dateOfBirth" name="dateOfBirth" placeholder="Your Date of Birth"
+                                    [(ngModel)]="userDetails.dateOfBirth">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Address -->
+                    <tr>
+                        <td colspan="4">
+                            <div class="form-input">
+                                <label for="address">Address:</label>
+                                <input type="text" id="address" name="address" placeholder="Your Address"
+                                    [(ngModel)]="userDetails.address">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Contact -->
+                    <tr>
+                        <td colspan="4">
+                            <div class="form-input">
+                                <label for="contactNumber">Contact:</label>
+                                <input type="text" id="contactNumber" name="contactNumber"
+                                    placeholder="Your Contact Number" [(ngModel)]="userDetails.contactNumber">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- User name -->
+                    <tr>
+                        <td colspan="4">
+                            <div class="form-input">
+                                <label for="userName">User Name:</label>
+                                <input type="text" id="userName" name="userName" placeholder="Your User Name"
+                                    [(ngModel)]="userDetails.userName" disabled>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Password -->
+                    <tr>
+                        <td colspan="4">
+                            <div class="form-input">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" placeholder="Your Password"
+                                    [(ngModel)]="userDetails.password">
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+                <!-- Sport, Role and Team Name -->
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="table-header">Sports Information</div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <ng-container *ngIf="userDetails.sportsDetails && userDetails.sportsDetails.length > 0">
+                        <ng-container *ngFor="let eachSportDetail of userDetails.sportsDetails; let sportIndex=index;">
+
+                            <tr>
+                                <td colspan="2">
+                                    <div class="form-input-sport">
+                                        <label for="sportName_{{sportIndex}}">Sport:</label>
+                                        <select id="sportName_{{sportIndex}}" 
+                                                name="sportName_{{sportIndex}}"     
+                                                [(ngModel)]="eachSportDetail.sport"
+                                                (change)="changeSport(sportIndex)"
+                                                [disabled]="sportIndex == 0">
+
+                                            <option class="option-value-default" value="" selected disabled>Select the Sport you play</option>
+                                            <option class="option-value" 
+                                                    *ngFor="let eachValue of sportsMap.sportsList" 
+                                                    value="{{eachValue.id}}"
+                                                    [disabled]="isSportSelectedBefore(eachValue.id)">{{eachValue.value}}</option>
+                        
+                                        </select>
+                                    </div>
+                                </td>
+
+                                <td colspan="2">
+                                    <div class="form-input-sport" (clickOutside)="showDropDown[sportIndex] = false">
+                                        <label for="role_{{sportIndex}}">Role:</label>
+                                        <button class="drop-toggle btn flat"
+                                                (click)="showDropDown[sportIndex] = !showDropDown[sportIndex]"
+                                                [disabled]="sportIndex == 0">
+                                            <span class="placeholder-text" 
+                                                  *ngIf="(!roles[sportIndex] || roles[sportIndex].length == 0 ) || 
+                                                         (roles[sportIndex].length > 0 && selectedRoles[sportIndex]?.length == 0)">Select the roles you play in</span>
+
+                                            <span *ngIf="selectedRoles[sportIndex] && selectedRoles[sportIndex].length > 0">{{selectedRoles[sportIndex].join(', ')}}</span>
+
+                                            <i class="fa fa-angle-down"></i>                            
+                                        </button>
+                                        <div class="drop-show" 
+                                             *ngIf="showDropDown[sportIndex] && roles[sportIndex] && roles[sportIndex].length > 0">
+                                            <label *ngFor="let eachRole of roles[sportIndex]">
+                                                <input type="checkbox" 
+                                                       name="role_checkbox_{{eachRole.id}}" 
+                                                       [(ngModel)]="eachRole.checked" 
+                                                       (change)="getSelectedValue(eachRole.checked, eachRole.id, sportIndex)" />
+                                                <span>{{eachRole.value}}</span>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <div class="form-input-sport">
+                                        <label for="teamName_{{sportIndex}}">Team:</label>
+                                        <input type="text" id="teamName_{{sportIndex}}" name="teamName_{{sportIndex}}"
+                                            placeholder="The Team you play in" [(ngModel)]="eachSportDetail.teams[0]"
+                                            [disabled]="sportIndex == 0">
+                                    </div>
+                                </td>
+
+                                <td colspan="2" *ngIf="sportIndex > 0">
+                                    <div class="form-input-sport-btn">
+                                        <button class="btn-remove-new-sport" (click)="removeSport(sportIndex)">
+                                            <span class="btn-icon"><img src="../../assets/icons/delete-bin.png"></span>
+                                            <span class="btn-label">REMOVE SPORT</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </ng-container>
+                    </ng-container>
+                </tbody>
+
+                <!-- Add New Sport -->
+                <thead>
+                    <tr>
+                        <td colspan="4">
+                            <div class="form-input-sport-btn add-new-sport-btn-container">
+                                <button class="btn-add-new-sport" (click)="addNewSport()">
+                                    <span class="btn-icon"><img src="../../assets/icons/add-icon.png"></span>
+                                    <span class="btn-label">ADD NEW SPORT</span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+
+        </form>
+    </section>
+
+    <!-- update button -->
+    <div class="button-container">
+        <button class="btn update" (click)="updateProfile()">UPDATE</button>
+    </div>
+
+</div>
